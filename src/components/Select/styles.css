@@ -1,0 +1,94 @@
+@import '@radix-ui/colors/slate-dark.css';
+@import '@radix-ui/colors/iris.css';
+@import '@radix-ui/colors/sage.css';
+
+/* reset */
+button {
+  all: unset;
+}
+
+.SelectTrigger {
+  width: 40rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: .4rem;
+  padding: 0 1.5rem;
+  font-size: 1.6rem;
+  line-height: 1;
+  height: 3.5rem;
+  gap: .8rem;
+  background-color: var(--iris-10);
+  color: var(--sage-4);
+}
+
+.SelectTrigger:hover {
+  filter: brightness(0.9);
+}
+
+.SelectIcon {
+  color: var(--sage-4);
+  font-size: 1.6rem;
+
+}
+
+.SelectContent {
+  overflow: hidden;
+  background-color: var(--iris-8);
+  border-radius: .6rem;
+}
+
+.SelectViewport {
+  padding: .5rem;
+}
+
+.SelectItem {
+  font-size: 1.6rem;
+  line-height: 1;
+  color: var(--slate-3);
+  border-radius: .3rem;
+  display: flex;
+  align-items: center;
+  height: 2.5rem;
+  padding: 0 3.5rem 0 2.5rem;
+  position: relative;
+  user-select: none;
+}
+
+
+.SelectItem[data-highlighted] {
+  outline: none;
+  background-color: var(--iris-5);
+  color: var(--slate-5);
+}
+
+.SelectLabel {
+  padding: 0 2.5rem;
+  font-size: 1.2rem;
+  line-height: 2.5rem;
+  color: var(--slate-4);
+}
+
+.SelectSeparator {
+  height: .01rem;
+  background-color: var(--slate-2);
+  margin: .5rem;
+}
+
+.SelectItemIndicator {
+  position: absolute;
+  left: 0;
+  width: 2.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.SelectScrollButton {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 2.5rem;
+  background-color: var(--iris-5);
+  color: var(--sage-10);
+}
