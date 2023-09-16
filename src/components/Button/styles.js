@@ -11,7 +11,6 @@ export const Container = styled.button`
     border: none;
     background-color: ${ ({theme}) => theme.text6 };
     color: ${ ({theme}) => theme.text1 };
-    font-weight: 700;
     font-size: 1.6rem;
 
     svg {

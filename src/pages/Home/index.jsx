@@ -3,6 +3,7 @@ import { Header } from "../../components/Header";
 import { Container, Brand, Filter, Content, Resume, NewExpense } from "./styles";
 import { SelectHome } from "../../components/Select";
 import { Expense } from "../../components/Expense";
+import { Link } from "react-router-dom";
 
 export function Home() {
 
@@ -36,7 +37,7 @@ export function Home() {
 
                 <h3>Total do mês: R$ 2800,00</h3>
 
-                <a href="/">Ver resumo detalhado</a>
+                <Link to="/details">Ver resumo detalhado</Link>
                 
             </Resume>
 
@@ -66,7 +67,7 @@ export function Home() {
                 </Expense>
             </Content>
 
-            <NewExpense>
+            <NewExpense to="/new">
                 <AiOutlinePlus />
                 Adicionar gasto
             </NewExpense>

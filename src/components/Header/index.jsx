@@ -4,7 +4,7 @@ import { AiOutlinePoweroff } from "react-icons/ai"
 export function Header() {
     return (
         <Container>
-            <Profile>
+            <Profile to="/profile">
                 <img src="https://github.com/leonardospereira.png" alt="Foto usuário"/>
 
                 <div className="content">

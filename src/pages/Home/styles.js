@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import styled from "styled-components";
 
 export const Container = styled.div`
@@ -89,7 +90,7 @@ export const Content = styled.div`
 
 `;
 
-export const NewExpense = styled.a`
+export const NewExpense = styled(Link)`
     grid-area: newexpense;
     background-color: ${ ({theme}) => theme.text6 };
     display: flex;
