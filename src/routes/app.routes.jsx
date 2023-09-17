@@ -1,5 +1,4 @@
 import { Routes, Route } from "react-router-dom";
-
 import { Home } from "../pages/Home";
 import { NewExpense } from "../pages/New";
 import { Details } from "../pages/Details";

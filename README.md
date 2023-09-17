@@ -24,7 +24,6 @@ Inicialmente você vai precisar de alguns programas instalados para que consiga 
 - [Visual Studio Code](https://code.visualstudio.com) - Editor de código
 - [Node.js + npm](https://nodejs.org/en) - Versão LTS recomendada
 
-
 ### Instalando
 
 Instruções passo a passo para utilizar a aplicação:
@@ -46,6 +45,7 @@ npm run dev
 
 Tendo executado o servidor local, clique no link informado no terminal ou o digite no seu navegador para ter acesso à aplicação.
 
+*Para acessar as páginas de login e de criação de usuários, acesse o arquivo "src/routes/index.jsx" e altere o valor contido dentro do "BrowserRouter" para o "AuthRoutes."*
 
 ## ⛏️ Tecnologias <a name = "built_using"></a>
 
