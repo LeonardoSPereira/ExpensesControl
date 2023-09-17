@@ -59,7 +59,7 @@ export function Home() {
                 <Expense title="Camisa nova" date={data} value={80} category="Roupas">
                     Compra de uma camisa nova
                 </Expense>
-                <Expense title="Streaming" date={data} value={100} category="Streming">
+                <Expense title="Streaming" date={data} value={100} category="Streaming">
                     Pagamento das assinaturas da Netflix, Amazon Prime, Paramount+, HBO Max
                 </Expense>
                 <Expense title="Jogo PS5" date={data} value={300} category="Extras">
