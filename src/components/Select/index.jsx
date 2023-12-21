@@ -4,6 +4,7 @@ import classnames from 'classnames';
 import { CheckIcon, ChevronDownIcon, ChevronUpIcon } from '@radix-ui/react-icons';
 import "./styles.css"
 
+// eslint-disable-next-line react/display-name
 const SelectItem = React.forwardRef(({ children, className, ...props }, forwardedRef) => {
   return (
     <Select.Item className={classnames('SelectItem', className)} {...props} ref={forwardedRef}>
@@ -15,8 +16,9 @@ const SelectItem = React.forwardRef(({ children, className, ...props }, forwarde
   );
 });
 
-export const SelectHome = () => (
-    <Select.Root>
+// eslint-disable-next-line react/prop-types
+export const SelectHome = ({value}) => (
+    <Select.Root onValueChange={value}>
       <Select.Trigger className="SelectTrigger" aria-label="Filtro dos gastos">
         <Select.Value placeholder="Selecione" />
         <Select.Icon className="SelectIcon">
@@ -32,18 +34,18 @@ export const SelectHome = () => (
 
           <Select.Viewport className="SelectViewport">
             <Select.Group>
-              <SelectItem value="all">Todos</SelectItem>
+              <SelectItem value={null}>Todos</SelectItem>
             </Select.Group>
 
             <Select.Separator className="SelectSeparator" />
 
             <Select.Group>
               <Select.Label className="SelectLabel">Categoria</Select.Label>
-              <SelectItem value="casa">Aluguel</SelectItem>
-              <SelectItem value="alimento">Alimentação</SelectItem>
-              <SelectItem value="roupa">Roupas</SelectItem>
-              <SelectItem value="streaming">Streaming</SelectItem>
-              <SelectItem value="extra">Extras</SelectItem>
+              <SelectItem value="Aluguel">Aluguel</SelectItem>
+              <SelectItem value="Alimentação">Alimentação</SelectItem>
+              <SelectItem value="Roupas">Roupas</SelectItem>
+              <SelectItem value="Streaming">Streaming</SelectItem>
+              <SelectItem value="Extras">Extras</SelectItem>
             </Select.Group>
 
             <Select.Separator className="SelectSeparator" />

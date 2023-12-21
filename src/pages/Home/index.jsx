@@ -1,3 +1,4 @@
+import { useState } from "react";
 import { AiOutlinePlus } from "react-icons/ai";
 import { Header } from "../../components/Header";
 import { Container, Brand, Filter, Content, Resume, NewExpense } from "./styles";
@@ -5,15 +6,55 @@ import { SelectHome } from "../../components/Select";
 import { Expense } from "../../components/Expense";
 import { Link } from "react-router-dom";
 
+
+const expenses = [
+    {
+      title: 'Aluguel',
+      date: new Date('2023-12-21'), // Replace '2023-12-21' with an actual date string or a Date object
+      value: 1500,
+      category: 'Aluguel',
+      description: 'Aluguel da casa',
+    },
+    {
+      title: 'Gas',
+      date: new Date('2023-12-22'),
+      value: 50,
+      category: 'Utilities',
+      description: 'Gas bill',
+    },
+    {
+      title: 'Groceries',
+      date: new Date('2023-12-23'),
+      value: 200,
+      category: 'Food',
+      description: 'Weekly groceries',
+    },
+    {
+        title: 'Aluguel',
+        date: new Date('2023-12-21'), // Replace '2023-12-21' with an actual date string or a Date object
+        value: 1500,
+        category: 'Aluguel',
+        description: 'Aluguel da casa',
+      },
+      {
+        title: 'Gas',
+        date: new Date('2023-12-22'),
+        value: 50,
+        category: 'Utilities',
+        description: 'Gas bill',
+      },
+      {
+        title: 'Groceries',
+        date: new Date('2023-12-23'),
+        value: 200,
+        category: 'Food',
+        description: 'Weekly groceries',
+      },
+];
+  
+
 export function Home() {
-
-    const dataAtual = new Date();
-
-    const dia = dataAtual.getDate();
-    const mes = dataAtual.getMonth() + 1;
-    const ano = dataAtual.getFullYear();
-
-    const data = `${dia}/0${mes}/${ano}`;
+    const [expense, setExpense] = useState("");    
 
     return (
         <Container>
@@ -43,28 +84,25 @@ export function Home() {
 
             <Filter>
                 Filtro: 
-                <SelectHome />
+                <SelectHome value={setExpense}/>
             </Filter>
 
             <Content>
-                <Expense title="Aluguel" date={data} value={1500} category="Aluguel">
-                    Aluguel da casa
-                </Expense>
-                <Expense title="Alimentos" date={data} value={700} category="Alimentos">
-                    Compra dos alimentos do mês
-                </Expense>
-                <Expense title="Calça nova" date={data} value={120} category="Roupas">
-                    Compra de uma calça nova
-                </Expense>
-                <Expense title="Camisa nova" date={data} value={80} category="Roupas">
-                    Compra de uma camisa nova
-                </Expense>
-                <Expense title="Streaming" date={data} value={100} category="Streaming">
-                    Pagamento das assinaturas da Netflix, Amazon Prime, Paramount+, HBO Max
-                </Expense>
-                <Expense title="Jogo PS5" date={data} value={300} category="Extras">
-                    Compra do jogo Hogwarts Legacy para PS5
-                </Expense>
+
+                {
+                expenses.map((expense, index) => (
+                    <Expense
+                        key={String(index)}
+                        title={expense.title}
+                        date={expense.data} 
+                        value={expense.value} 
+                        category={expense.category}
+                    >
+                        {expense.description}
+                    </Expense>
+                ))
+                }
+                
             </Content>
 
             <NewExpense to="/new">
